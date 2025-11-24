@@ -22,14 +22,14 @@
         </set>
         where id = #{id}
     </update>
-    <delete id="stop">
+    <update id="stop">
         update setmeal
         set status = 0
         where id in
         <foreach collection="ids" item="setmealId" open="(" close=")" separator=",">
             #{setmealId}
         </foreach>
-    </delete>
+    </update>
     <delete id="deleteByIds">
         delete from setmeal
         where id in
